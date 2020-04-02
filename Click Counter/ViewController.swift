@@ -9,23 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var count = 0
+    var label = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        createFormatter()
+
+        // label
+        let label = UILabel()
+        // button
+        let button = UIButton()
+        createFormatter(label: label, button: button)
     }
     
-    // label
-    let label = UILabel()
-    // button
-    let button = UIButton()
-    
-    func createFormatter() {
+
+    func createFormatter(label:UILabel, button:UIButton) {
     
         label.frame = CGRect(x: 200, y: 200, width: 60, height: 60)
         label.text = "0"
         view.addSubview(label)
+        self.label = label
         
         button.frame = CGRect(x: 150, y: 300, width: 100, height: 60)
         button.setTitle("Click", for: .normal)
@@ -34,7 +36,11 @@ class ViewController: UIViewController {
         
     }
     
-
+    
+    func incrementCount()   {
+        self.count += 1
+        self.label.text = "\(self.count)"
+    }
 
 
 }
