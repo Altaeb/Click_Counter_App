@@ -57,12 +57,14 @@ class ViewController: UIViewController {
         self.count += 1
         self.label1.text = "\(self.count)"
         self.label2.text = "\(self.count)"
+        view.backgroundColor = UIColor.yellow
     }
     
     @objc func decrementCount()   {
         self.count -= 1
         self.label1.text = "\(self.count)"
         self.label2.text = "\(self.count)"
+        view.backgroundColor = UIColor.green
     }
 
 
